@@ -8,6 +8,7 @@
  * */
 #include <iostream>
 #include <cmath>
+#include <stack>
 #include <cstdlib>
 #include <algorithm>
 #include <agent.hpp>
@@ -30,8 +31,8 @@ Agent::~Agent()
 void Agent::run()
 {
 	//example
-    // print_scenario(scenario1); //first element corresponds to the start position of the robot
- 
+     //print_scenario(scenario3[0]); //first element corresponds to the start position of the robot
+	cout << scenario3[0].get_x() << endl;
    //TODO
 }
 
@@ -49,5 +50,42 @@ void Agent::print_scenario(vector<Location>& scenario) {
 
 vector<Location> Agent::dbs_bactracking(vector<Location> scenario) {
     //TODO
+
+	//empty stack of moves
+	stack<Location> moves_made;
+
+	//start location
+	vector<Location> start_location;
+
+	//add the first Location into the stack
+	moves_made.push(scenario.front());
+
+	int TOTAL_LOCATIONS = scenario.size();
+
+	//solve_scenario(scenario,start_location);
+
+}
+
+vector<Location> generate_deadlines_from(vector<Location> present, vector<Location> remaining_scenario){
+	vector<Location> result;
+	//Location next;
+	double deadline = 0;
+	double min_deadline;
+	int index_min = 0;
+
+
+}
+
+
+
+void solve_scenario(vector<Location> scenario, vector<Location> start){
+
+	//stores the location of where the present package is at
+	//vector<Location> present = start.back();
+
+	//stores the destinations of the packages yet to be delivered
+	vector<Location> neighbors;
+
+	//neighbors = generate_deadlines_from(present, scenario);
 }
 
